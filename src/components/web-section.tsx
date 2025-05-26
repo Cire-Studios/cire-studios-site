@@ -53,7 +53,7 @@ export default function WebSection() {
             title="Mom's Next Best Home"
             description="A comprehensive real estate platform featuring advanced property search, detailed listings, and seamless user experience for home buyers and sellers."
             displayLink="momnextbesthome.com"
-            link="https://elderstay-connect-care.lovable.app/"
+            link="https://momsnextbesthome.com/"
           />
 
           <WebProject
