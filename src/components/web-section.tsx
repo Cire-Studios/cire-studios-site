@@ -1,6 +1,7 @@
 import { Globe } from "lucide-react";
 import WebProject from "./web-project";
-import { Badge } from "./ui/badge";
+import SkillBadge from "./skill-badge";
+
 export default function WebSection() {
   return (
     <section id="web-dev" className="py-32 relative overflow-hidden">
@@ -24,21 +25,15 @@ export default function WebSection() {
                 complex web applications.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
-                  React
-                </Badge>
-                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
-                  TypeScript
-                </Badge>
-                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
-                  Tailwind CSS
-                </Badge>
-                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
-                  Next.js
-                </Badge>
-                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
-                  PHP
-                </Badge>
+                <SkillBadge skill="React" />
+                <SkillBadge skill="TypeScript" />
+                <SkillBadge skill="HTML" />
+                <SkillBadge skill="Tailwind CSS" />
+                <SkillBadge skill="Next.js" />
+                <SkillBadge skill="PHP" />
+                <SkillBadge skill="Laravel" />
+                <SkillBadge skill="SQL" />
+                <SkillBadge skill="Supabase" />
               </div>
             </div>
             <div className="w-full lg:w-1/2 relative">

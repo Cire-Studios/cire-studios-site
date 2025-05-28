@@ -1,6 +1,6 @@
 import { Smartphone } from "lucide-react";
 import MobileProject from "./mobile-project";
-import { Badge } from "./ui/badge";
+import SkillBadge from "./skill-badge";
 
 export default function MobileSection() {
   return (
@@ -28,18 +28,10 @@ export default function MobileSection() {
                 experiences.
               </p>
               <div className="flex flex-wrap gap-3">
-                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
-                  React Native
-                </Badge>
-                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
-                  Flutter
-                </Badge>
-                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
-                  Unity
-                </Badge>
-                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
-                  Swift
-                </Badge>
+                <SkillBadge skill="React Native" />
+                <SkillBadge skill="Unity" />
+                <SkillBadge skill="Firebase" />
+                <SkillBadge skill="SQLite" />
               </div>
             </div>
             <div className="w-full lg:w-1/2 relative">
