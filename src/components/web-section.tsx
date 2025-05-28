@@ -10,11 +10,11 @@ export default function WebSection() {
         <div className="mb-24">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 space-y-8">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center transform rotate-12">
+              <div className="flex flex-col lg:flex-row items-center gap-4 mb-6">
+                <div className="w-16 h-16 aspect-square bg-emerald-500 rounded-2xl flex items-center justify-center transform rotate-12">
                   <Globe className="w-8 h-8 text-gray-950" />
                 </div>
-                <h2 className="text-4xl md:text-7xl font-black text-white">
+                <h2 className="text-5xl md:text-7xl font-black text-white">
                   Web Development
                 </h2>
               </div>
@@ -36,6 +36,9 @@ export default function WebSection() {
                 <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
                   Next.js
                 </Badge>
+                <Badge className="bg-gray-800 text-emerald-400 border border-emerald-500/30 px-4 py-2 text-sm">
+                  PHP
+                </Badge>
               </div>
             </div>
             <div className="w-full lg:w-1/2 relative">
@@ -51,17 +54,23 @@ export default function WebSection() {
         <div className="space-y-24">
           <WebProject
             title="Mom's Next Best Home"
-            description="A comprehensive real estate platform featuring advanced property search, detailed listings, and seamless user experience for home buyers and sellers."
+            description="A comprehensive platform designed to assist families in finding the best senior care services. It offers a wide range of options from Assisted Living and Independent Living to Senior Communities. Users can easily browse and filter by location, services, and amenities, ensuring they find the perfect match for their needs. The website also provides detailed information on each facility, including reviews, pricing, and availability, making the decision-making process seamless and informed."
             displayLink="momnextbesthome.com"
             link="https://momsnextbesthome.com/"
           />
 
           <WebProject
             title="The Ramekin"
-            description="An elegant restaurant website featuring online ordering, reservation system, and beautiful menu presentation with seamless mobile experience."
-            displayLink="theramekin.com"
-            link="https://ramekin-sweet-spots.lovable.app/"
+            description="Online bakery featuring jumbo personal desserts served in individual ramekins. The website allows customers to order online and pick up or have delivered. It offers a rotating menu of 8 desserts every month, ensuring a fresh and exciting selection for customers. Additionally, it features a date night section where couples can assemble and bake their own desserts, providing a fun and interactive experience."
+            displayLink="theramekin.cafe"
+            link="https://www.theramekin.cafe/"
             textLeft
+          />
+          <WebProject
+            title="Six Dots"
+            description="Landing page for a yard game product. Features a simple and clean design with a focus on the game's unique versatility as well as an open forum for users to share their own creations."
+            displayLink="sixdotsyardgame.com"
+            link="https://v0-sixdots-landing-page.vercel.app/"
           />
         </div>
       </div>

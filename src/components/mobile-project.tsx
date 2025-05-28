@@ -1,9 +1,10 @@
 import { Gamepad2 } from "lucide-react";
-
-import { ExternalLink } from "lucide-react";
-
 import { Smartphone } from "lucide-react";
-import { Button } from "./ui/button";
+import MasonryGallery from "./masonry-gallery";
+import Image from "next/image";
+
+// import { ExternalLink } from "lucide-react";
+// import { Button } from "./ui/button";
 
 export default function MobileProject({
   title,
@@ -12,6 +13,8 @@ export default function MobileProject({
   // link,
   textLeft = false,
   projectType = "app",
+  imageSrcs,
+  layout = "default",
 }: {
   title: string;
   description: string;
@@ -19,6 +22,8 @@ export default function MobileProject({
   // link: string;
   textLeft?: boolean;
   projectType?: "app" | "game";
+  imageSrcs: string[];
+  layout?: "default" | "masonry";
 }) {
   return (
     <div className="relative">
@@ -34,28 +39,34 @@ export default function MobileProject({
             } hover:rotate-0 transition-transform duration-500 shadow-2xl`}
           >
             <div className="aspect-[4/5] bg-gray-900 flex items-center justify-center">
-              <div className="text-center">
-                {projectType === "app" && (
-                  <Smartphone className="w-16 h-16 text-emerald-400 mx-auto mb-4" />
-                )}
-                {projectType === "game" && (
-                  <Gamepad2 className="w-16 h-16 text-emerald-400 mx-auto mb-4" />
-                )}
-                <p className="text-gray-500">App Preview</p>
-              </div>
+              {layout === "masonry" ? (
+                <MasonryGallery imageSrcs={imageSrcs} scrollSpeed={2} />
+              ) : (
+                <Image
+                  src={imageSrcs[0]}
+                  alt={title}
+                  fill
+                  className="object-contain"
+                />
+              )}
             </div>
           </div>
         </div>
         <div className="lg:w-1/3 space-y-6">
           <div className="flex items-center gap-3">
-            <Smartphone className="w-6 h-6 text-emerald-400" />
+            {projectType === "app" && (
+              <Smartphone className="w-6 h-6 text-emerald-400" />
+            )}
+            {projectType === "game" && (
+              <Gamepad2 className="w-6 h-6 text-emerald-400" />
+            )}
             <h3 className="text-3xl font-bold text-white">{title}</h3>
           </div>
           <p className="text-gray-400 text-lg leading-relaxed">{description}</p>
-          <Button className="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-semibold group">
+          {/* <Button className="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-semibold group">
             View Details
             <ExternalLink className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>

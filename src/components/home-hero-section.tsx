@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { ArrowRight } from "lucide-react";
+// import { Button } from "./ui/button";
+// import { ArrowRight } from "lucide-react";
 
 export default function HomeHeroSection() {
   return (
@@ -29,7 +29,7 @@ export default function HomeHeroSection() {
             Crafting exceptional digital experiences through innovative web
             development and mobile app solutions
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          {/* <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
               size="lg"
               className="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold text-lg px-8 py-4 transform hover:scale-105 transition-all shadow-lg"
@@ -44,7 +44,7 @@ export default function HomeHeroSection() {
             >
               Get Started
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

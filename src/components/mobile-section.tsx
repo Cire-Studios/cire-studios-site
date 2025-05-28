@@ -14,7 +14,7 @@ export default function MobileSection() {
         <div className="mb-24">
           <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
             <div className="w-full lg:w-1/2 space-y-8">
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex flex-col lg:flex-row items-center gap-4 mb-6">
                 <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center transform -rotate-12">
                   <Smartphone className="w-8 h-8 text-gray-950" />
                 </div>
@@ -57,21 +57,34 @@ export default function MobileSection() {
           {/* Xact Fitness */}
           <MobileProject
             title="Xact Fitness"
-            description="Comprehensive fitness tracking and workout planning app with personalized routines, progress analytics, and social features."
+            description="Comprehensive fitness tracking and workout planning app with personalized routines, progress analytics, and an AI coach that evaluates and adjusts your workouts every 2 weeks."
             projectType="app"
+            imageSrcs={[
+              "/xact-fitness/barbell-input.png",
+              "/xact-fitness/create-workout.png",
+              "/xact-fitness/edit-view.png",
+              "/xact-fitness/exercise-details.png",
+              "/xact-fitness/exercise-library.png",
+              "/xact-fitness/log-keyboard.png",
+              "/xact-fitness/rest-timer.png",
+              "/xact-fitness/workout-drawer.png",
+            ]}
+            layout="masonry"
           />
           <MobileProject
             title="Space Bots"
             description="Casual puzzle game with simple controls and addictive gameplay."
             projectType="game"
             textLeft
+            imageSrcs={["/space-bots/preview.png"]}
           />
 
-          <MobileProject
+          {/* <MobileProject
             title="Cube Jump"
-            description="Addictive puzzle platformer with intuitive controls, challenging levels, and satisfying physics-based gameplay."
+            description="Addictive puzzle platformer with stunning visuals, simple controls, challenging levels, and satisfying physics-based gameplay."
             projectType="game"
-          />
+            imageSrcs={[]}
+          /> */}
         </div>
       </div>
     </section>
