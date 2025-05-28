@@ -26,6 +26,9 @@ importers:
       lucide-react:
         specifier: ^0.511.0
         version: 0.511.0(react@19.1.0)
+      magic-grid:
+        specifier: ^3.4.7
+        version: 3.4.7
       next:
         specifier: 15.3.2
         version: 15.3.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1552,6 +1555,9 @@ packages:
     resolution: {integrity: sha512-VK5a2ydJ7xm8GvBeKLS9mu1pVK6ucef9780JVUjw6bAjJL/QXnd4Y0p7SPeOUMC27YhzNCZvm5d/QX0Tp3rc0w==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  magic-grid@3.4.7:
+    resolution: {integrity: sha512-SPy2dmzAzBr8AysPXH6gT9bE9PYIFX/ZQCf/XRojXFnuyFeHkITV2gp6j/7msrcqSDt6Tu+XUtLfQF79Ugc6/g==}
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -3607,6 +3613,8 @@ snapshots:
   lucide-react@0.511.0(react@19.1.0):
     dependencies:
       react: 19.1.0
+
+  magic-grid@3.4.7: {}
 
   magic-string@0.30.17:
     dependencies:
