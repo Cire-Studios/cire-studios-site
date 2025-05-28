@@ -55,8 +55,8 @@ export default function WebSection() {
           <WebProject
             title="Mom's Next Best Home"
             description="A comprehensive platform designed to assist families in finding the best senior care services. It offers a wide range of options from Assisted Living and Independent Living to Senior Communities. Users can easily browse and filter by location, services, and amenities, ensuring they find the perfect match for their needs. The website also provides detailed information on each facility, including reviews, pricing, and availability, making the decision-making process seamless and informed."
-            displayLink="momnextbesthome.com"
-            link="https://momsnextbesthome.com/"
+            displayLink="momsnextbesthome.com"
+            link="https://www.momsnextbesthome.com/"
           />
 
           <WebProject
