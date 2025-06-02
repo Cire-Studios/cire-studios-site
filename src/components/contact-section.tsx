@@ -21,6 +21,13 @@ export default function ContactSection() {
           <Button
             size="lg"
             className="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold text-xl px-12 py-6 transform hover:scale-105 transition-all shadow-xl"
+            onClick={() =>
+              window.open(
+                "https://calendly.com/cirestudios-dev/30min",
+                "_blank",
+                "noopener,noreferrer"
+              )
+            }
           >
             Get In Touch
             <ArrowRight className="ml-3 w-6 h-6" />
