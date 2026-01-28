@@ -48,6 +48,19 @@ export default function WebSection() {
 
         <div className="space-y-24">
           <WebProject
+            title="reqCHECK"
+            description="Landing site for reqCHECK, a gate-first skill verification platform that helps companies stop AI resume spam. The site explains how recruiters can embed a quiz widget on job postings, verify scores via API, and filter applications so only real, qualified candidates reach their inbox."
+            displayLink="reqcheck.io"
+            link="https://www.reqcheck.io/"
+            textLeft
+          />
+          <WebProject
+            title="Chrona"
+            description="Marketing site for Chrona, a progressive work journal that turns lived experience into trustworthy artifacts. It guides daily capture, weekly reflection, quarterly AI distillation, and on-demand artifact generation so professionals can build resumes and proof of work grounded in real events."
+            displayLink="chrona.cloud"
+            link="https://chrona.cloud/"
+          />
+          <WebProject
             title="Mom's Next Best Home"
             description="A comprehensive platform designed to assist families in finding the best senior care services. It offers a wide range of options from Assisted Living and Independent Living to Senior Communities. Users can easily browse and filter by location, services, and amenities, ensuring they find the perfect match for their needs. The website also provides detailed information on each facility, including reviews, pricing, and availability, making the decision-making process seamless and informed."
             displayLink="momsnextbesthome.com"
