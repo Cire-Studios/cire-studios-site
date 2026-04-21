@@ -1,6 +1,10 @@
 import { Smartphone } from "lucide-react";
 import MobileProject from "./mobile-project";
 import SkillBadge from "./skill-badge";
+import CaravanShowcaseVisual from "./caravan/caravan-showcase-visual";
+import { caravanHeroTags, caravanPortfolioProject } from "@/content/caravan";
+import { vectraPortfolioProject } from "@/content/vectra-fitness";
+import { chefLabPortfolioProject } from "@/content/chef-lab";
 
 export default function MobileSection() {
   return (
@@ -23,9 +27,9 @@ export default function MobileSection() {
                 </h2>
               </div>
               <p className="text-xl text-gray-400 leading-relaxed">
-                Native and cross-platform mobile applications with engaging user
-                interfaces, smooth performance, and captivating gaming
-                experiences.
+                Native and cross-platform mobile products with polished user
+                interfaces, thoughtful interaction design, and enough depth to
+                support both serious workflows and playful experiences.
               </p>
               <div className="flex flex-wrap gap-3">
                 <SkillBadge skill="React Native" />
@@ -46,6 +50,38 @@ export default function MobileSection() {
 
         {/* Projects */}
         <div className="space-y-24">
+          <MobileProject
+            title={caravanPortfolioProject.title}
+            description={caravanPortfolioProject.description}
+            projectType="app"
+            imageSrcs={[]}
+            href={caravanPortfolioProject.href}
+            ctaLabel={caravanPortfolioProject.ctaLabel}
+            statusLabel="In active development"
+            tags={caravanHeroTags}
+            visual={<CaravanShowcaseVisual />}
+          />
+          <MobileProject
+            title={chefLabPortfolioProject.title}
+            description={chefLabPortfolioProject.description}
+            projectType="app"
+            textLeft
+            imageSrcs={["/chef-lab/preview.svg"]}
+            href={chefLabPortfolioProject.href}
+            ctaLabel={chefLabPortfolioProject.ctaLabel}
+            statusLabel={chefLabPortfolioProject.statusLabel}
+            tags={chefLabPortfolioProject.tags}
+          />
+          <MobileProject
+            title={vectraPortfolioProject.title}
+            description={vectraPortfolioProject.description}
+            projectType="app"
+            imageSrcs={["/vectra-fitness/hero-mark.svg"]}
+            href={vectraPortfolioProject.href}
+            ctaLabel={vectraPortfolioProject.ctaLabel}
+            statusLabel="Current product"
+            tags={["AI coaching", "2-week blocks", "Mobile app"]}
+          />
           {/* Xact Fitness */}
           <MobileProject
             title="Xact Fitness"
