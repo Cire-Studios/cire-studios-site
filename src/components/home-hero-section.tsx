@@ -1,50 +1,52 @@
 import Image from "next/image";
-// import { Button } from "./ui/button";
-// import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { Button } from "./ui/button";
 
 export default function HomeHeroSection() {
   return (
-    <section className="relative py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-gray-900"></div>
-      <div className="absolute top-20 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-10 w-72 h-72 bg-emerald-400/5 rounded-full blur-2xl"></div>
+    <section id="intro" className="relative overflow-hidden bg-background scroll-mt-24">
+      <h1 className="sr-only">Cire Studios</h1>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          <div className="mb-12 relative">
-            <div className="justify-center items-center">
-              <Image
-                className="mx-auto"
-                src="/CireLogoLarge.png"
-                alt="Cire Studios Logo"
-                width={512}
-                height={512}
-              />
-            </div>
-            <h1 className="text-6xl md:text-8xl font-black mb-8 bg-gradient-to-r from-white via-gray-200 to-emerald-400 bg-clip-text text-transparent leading-tight">
-              Cire Studios
-            </h1>
-          </div>
-          <p className="text-2xl md:text-3xl text-gray-300 mb-12 leading-relaxed max-w-4xl mx-auto">
-            Crafting exceptional digital experiences through innovative web
-            development and mobile app solutions
+      <div className="relative w-full aspect-[16/9] sm:aspect-[2/1] lg:aspect-[21/9] max-h-[70vh] min-h-[220px] brand-fade-in">
+        <Image
+          src="/brand/logo-wordmark.png"
+          alt="Cire Studios"
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+      </div>
+
+      <div className="relative z-10 border-t border-zinc-900/80">
+        <div className="container mx-auto px-6 py-10 md:py-14 text-center">
+          <p className="brand-fade-in-delay text-base md:text-xl text-zinc-300 tracking-wide leading-relaxed max-w-2xl mx-auto mb-3">
+            Apps. Games. Tables. Books.
           </p>
-          {/* <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <p className="brand-fade-in-delay text-base md:text-lg text-zinc-500 tracking-wide leading-relaxed max-w-2xl mx-auto mb-8">
+            A product studio shipping work you can open, play, and read.
+          </p>
+          <div className="brand-fade-in-delay-2 flex flex-col sm:flex-row gap-4 justify-center">
             <Button
+              asChild
               size="lg"
-              className="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-bold text-lg px-8 py-4 transform hover:scale-105 transition-all shadow-lg"
+              className="bg-white hover:bg-zinc-200 text-black font-semibold tracking-wide rounded-sm px-8 py-6 text-base"
             >
-              View Our Work
-              <ArrowRight className="ml-2 w-6 h-6" />
+              <Link href="#web">
+                Explore products
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
             </Button>
             <Button
+              asChild
               size="lg"
               variant="outline"
-              className="border-2 border-emerald-500 text-emerald-400 hover:bg-emerald-500 hover:text-gray-950 font-bold text-lg px-8 py-4 transform hover:scale-105 transition-all"
+              className="border border-zinc-600 bg-transparent text-white hover:bg-white/10 hover:text-white rounded-sm px-8 py-6 text-base tracking-wide"
             >
-              Get Started
+              <Link href="#board-games">Latest in development</Link>
             </Button>
-          </div> */}
+          </div>
         </div>
       </div>
     </section>

@@ -1,17 +1,24 @@
 "use client";
 
-import WebSection from "@/components/web-section";
-import MobileSection from "@/components/mobile-section";
-import WhyUsSection from "@/components/why-us-section";
-import ContactSection from "@/components/contact-section";
 import HomeHeroSection from "@/components/home-hero-section";
+import CategorySection from "@/components/portfolio/category-section";
+import ContactSection from "@/components/contact-section";
+import SectionRail from "@/components/section-rail";
+import { portfolioCategories } from "@/content/portfolio";
+
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-950 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-background text-white overflow-x-hidden">
+      <SectionRail />
       <HomeHeroSection />
-      <WebSection />
-      <MobileSection />
-      <WhyUsSection />
+      {portfolioCategories.map((category) => (
+        <CategorySection
+          key={category.id}
+          category={category.id}
+          label={category.label}
+          anchor={category.anchor}
+        />
+      ))}
       <ContactSection />
     </div>
   );

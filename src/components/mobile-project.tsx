@@ -50,11 +50,11 @@ export default function MobileProject({
       >
         <div className="w-full lg:w-2/3 relative group">
           <div
-            className={`bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl overflow-hidden transform ${
-              textLeft ? "rotate-2" : "-rotate-2"
+            className={`bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 overflow-hidden transform ${
+              textLeft ? "rotate-1" : "-rotate-1"
             } hover:rotate-0 transition-transform duration-500 shadow-2xl`}
           >
-            <div className="aspect-[4/5] bg-gray-900 flex items-center justify-center">
+            <div className="aspect-[4/5] bg-zinc-950 flex items-center justify-center">
               {visual ? (
                 <div className="h-full w-full">{visual}</div>
               ) : layout === "masonry" ? (
@@ -73,26 +73,28 @@ export default function MobileProject({
         <div className="lg:w-1/3 space-y-6">
           <div className="flex flex-wrap items-center gap-3">
             {projectType === "app" && (
-              <Smartphone className="w-6 h-6 text-emerald-400" />
+              <Smartphone className="w-6 h-6 text-zinc-400" />
             )}
             {projectType === "game" && (
-              <Gamepad2 className="w-6 h-6 text-emerald-400" />
+              <Gamepad2 className="w-6 h-6 text-zinc-400" />
             )}
-            <h3 className="text-3xl font-bold text-white">{title}</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold text-white uppercase tracking-[0.08em]">
+              {title}
+            </h3>
             {statusLabel ? (
-              <Badge className="border border-emerald-500/20 bg-emerald-500/10 text-emerald-200">
+              <Badge className="border border-zinc-600 bg-zinc-900 text-zinc-300 rounded-sm">
                 {statusLabel}
               </Badge>
             ) : null}
           </div>
-          <p className="text-gray-400 text-lg leading-relaxed">{description}</p>
+          <p className="text-zinc-400 text-lg leading-relaxed">{description}</p>
           {tags.length > 0 ? (
             <div className="flex flex-wrap gap-2">
               {tags.map((tag) => (
                 <Badge
                   key={tag}
                   variant="outline"
-                  className="border-gray-700 bg-gray-900/60 text-gray-300"
+                  className="border-zinc-700 bg-zinc-950/60 text-zinc-400 rounded-sm"
                 >
                   {tag}
                 </Badge>
@@ -102,7 +104,7 @@ export default function MobileProject({
           {href ? (
             <Button
               asChild
-              className="bg-emerald-500 hover:bg-emerald-600 text-gray-950 font-semibold group"
+              className="bg-white hover:bg-zinc-200 text-black font-semibold rounded-sm group"
             >
               <Link
                 href={href}

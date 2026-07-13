@@ -4,22 +4,22 @@ import SkillBadge from "./skill-badge";
 
 export default function WebSection() {
   return (
-    <section id="web-dev" className="py-32 relative overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-1 h-full bg-gradient-to-b from-emerald-500/20 to-transparent"></div>
+    <section id="web-dev" className="py-32 relative overflow-hidden bg-background">
+      <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-white/20 via-white/5 to-transparent" />
 
       <div className="container mx-auto px-6">
         <div className="mb-24">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 space-y-8">
               <div className="flex flex-col lg:flex-row items-center gap-4 mb-6">
-                <div className="w-16 h-16 aspect-square bg-emerald-500 rounded-2xl flex items-center justify-center transform rotate-12">
-                  <Globe className="w-8 h-8 text-gray-950" />
+                <div className="w-14 h-14 aspect-square bg-white flex items-center justify-center">
+                  <Globe className="w-7 h-7 text-black" />
                 </div>
-                <h2 className="text-5xl md:text-7xl font-black text-white">
+                <h2 className="text-4xl md:text-6xl font-semibold text-white uppercase tracking-[0.08em]">
                   Web Development
                 </h2>
               </div>
-              <p className="text-xl text-gray-400 leading-relaxed">
+              <p className="text-lg md:text-xl text-zinc-400 leading-relaxed">
                 Custom websites built with modern technologies, optimized for
                 performance and user experience. From sleek business sites to
                 complex web applications.
@@ -37,9 +37,9 @@ export default function WebSection() {
               </div>
             </div>
             <div className="w-full lg:w-1/2 relative">
-              <div className="w-full h-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-3xl transform rotate-3 shadow-2xl border border-gray-700">
-                <div className="absolute inset-4 bg-gray-950 rounded-2xl flex items-center justify-center">
-                  <Globe className="w-24 h-24 text-emerald-400/30" />
+              <div className="w-full h-96 bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
+                <div className="absolute inset-4 bg-black border border-zinc-800/80 flex items-center justify-center">
+                  <Globe className="w-24 h-24 text-zinc-700" />
                 </div>
               </div>
             </div>
