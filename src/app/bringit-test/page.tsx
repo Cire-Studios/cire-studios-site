@@ -4,6 +4,7 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   Check,
+  Download,
   MailCheck,
   MessageCircleHeart,
   PartyPopper,
@@ -24,6 +25,9 @@ const testerGroupUrl =
 const testAccessUrl =
   process.env.NEXT_PUBLIC_BRINGIT_TEST_ACCESS_URL ??
   "https://play.google.com/apps/testing/app.cirestudios.bringit";
+const playStoreUrl =
+  process.env.NEXT_PUBLIC_BRINGIT_PLAY_STORE_URL ??
+  "https://play.google.com/store/apps/details?id=app.cirestudios.bringit";
 
 const steps = [
   {
@@ -38,13 +42,23 @@ const steps = [
   },
   {
     number: "02",
-    title: "Get BringIt from Google Play",
+    title: "Become a tester",
     description:
-      "After joining the group, open the test page and choose “Become a tester.” Google Play will then give you the link to install BringIt.",
+      "After joining the group, open the test page and choose “Become a tester.”",
     action: "Open the test page",
     href: testAccessUrl,
     icon: ShieldCheck,
     accent: "forest",
+  },
+  {
+    number: "03",
+    title: "Install BringIt",
+    description:
+      "Once you have opted in, open the BringIt listing to install the app—or update it if it is already on your phone.",
+    action: "Open in Google Play",
+    href: playStoreUrl,
+    icon: Download,
+    accent: "gold",
   },
 ] as const;
 
@@ -56,6 +70,10 @@ const accentStyles = {
   forest: {
     icon: "bg-[#DCEBE0] text-[#2F6B4F]",
     button: "bg-[#2F6B4F] text-white hover:bg-[#24543E]",
+  },
+  gold: {
+    icon: "bg-[#FBEFD3] text-[#9A6D1A]",
+    button: "bg-[#E0A43B] text-[#2A2420] hover:bg-[#C9852E]",
   },
 } as const;
 
@@ -133,10 +151,10 @@ export default function BringItTestPage() {
       <section className="container mx-auto px-6 py-16 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#E2613C]">
-            Two quick steps
+            Three quick steps
           </p>
           <h2 className="mt-4 text-3xl font-black tracking-tight sm:text-4xl">
-            Join the group, then get the app.
+            Join, opt in, and install.
           </h2>
           <p className="mt-4 text-lg leading-8 text-[#5B5249]">
             Complete these in order. Keep this page open so it is easy to come
@@ -144,7 +162,7 @@ export default function BringItTestPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-4xl gap-5 md:grid-cols-2">
+        <div className="mx-auto mt-12 grid max-w-6xl gap-5 lg:grid-cols-3">
           {steps.map((step) => {
             const styles = accentStyles[step.accent];
             const Icon = step.icon;
