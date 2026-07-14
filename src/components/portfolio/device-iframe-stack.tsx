@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 type DeviceKind = "desktop" | "tablet" | "mobile";
 
@@ -26,6 +29,42 @@ const DEVICES: Record<
     frameWidth: 132,
   },
 };
+
+function useDesktopPreviews() {
+  const [enabled, setEnabled] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 1024px)");
+    const update = () => setEnabled(media.matches);
+
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  return enabled;
+}
+
+function SinglePreview({ src }: { src: string }) {
+  return (
+    <div className="overflow-hidden rounded-sm border border-zinc-700/80 bg-zinc-950 shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
+      <div className="flex items-center gap-2 border-b border-zinc-800 bg-zinc-900 px-3 py-2">
+        <span className="size-2 rounded-full bg-zinc-600" />
+        <span className="size-2 rounded-full bg-zinc-600" />
+        <span className="size-2 rounded-full bg-zinc-600" />
+      </div>
+      <div className="relative aspect-video w-full bg-black">
+        <iframe
+          src={src}
+          title="Product preview"
+          loading="lazy"
+          className="pointer-events-none absolute inset-0 h-full w-full border-0"
+          sandbox="allow-scripts allow-same-origin allow-forms"
+        />
+      </div>
+    </div>
+  );
+}
 
 function Screen({
   src,
@@ -275,9 +314,13 @@ export default function DeviceIframeStack({
   external?: boolean;
   variant?: "web" | "app";
 }) {
+  const showLivePreviews = useDesktopPreviews();
+
   return (
     <div className="relative w-full">
-      {variant === "web" ? (
+      {!showLivePreviews ? (
+        <SinglePreview src={src} />
+      ) : variant === "web" ? (
         <div className="relative mx-auto flex h-[420px] w-full max-w-[720px] items-end justify-center sm:h-[480px] lg:h-[560px]">
           <div className="absolute bottom-4 left-1/2 z-10 -translate-x-[56%] scale-[0.78] sm:scale-[0.9] lg:scale-100 origin-bottom">
             <ScaledDevice src={src} kind="desktop" />
@@ -309,4 +352,3 @@ export default function DeviceIframeStack({
     </div>
   );
 }
-
