@@ -52,16 +52,37 @@ function getActiveSectionId() {
   return current;
 }
 
+function getSectionProgress(activeId: string) {
+  const activeIndex = sections.findIndex((section) => section.id === activeId);
+  const activeElement = document.getElementById(activeId);
+  if (activeIndex < 0 || !activeElement) return 0;
+
+  const marker = window.innerHeight * 0.33;
+  const pageEnd = document.documentElement.scrollHeight - window.innerHeight;
+  const start = activeIndex === 0 ? 0 : activeElement.offsetTop - marker;
+  const nextSection = sections[activeIndex + 1];
+  const nextElement = nextSection
+    ? document.getElementById(nextSection.id)
+    : null;
+  const end = nextElement ? nextElement.offsetTop - marker : pageEnd;
+  const distance = Math.max(1, end - start);
+
+  return Math.min(1, Math.max(0, (window.scrollY - start) / distance));
+}
+
 export default function SectionRail() {
   const [activeId, setActiveId] = useState(sections[0].id);
   const [progress, setProgress] = useState(0);
+  const [sectionProgress, setSectionProgress] = useState(0);
 
   useEffect(() => {
     let frame = 0;
 
     const update = () => {
       frame = 0;
-      setActiveId(getActiveSectionId());
+      const currentId = getActiveSectionId();
+      setActiveId(currentId);
+      setSectionProgress(getSectionProgress(currentId));
       const doc = document.documentElement;
       const max = doc.scrollHeight - window.innerHeight;
       setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
@@ -102,7 +123,7 @@ export default function SectionRail() {
           <div className="h-px w-full bg-zinc-900">
             <div
               className="h-px bg-white transition-[width] duration-150 ease-out"
-              style={{ width: `${progress * 100}%` }}
+              style={{ width: `${sectionProgress * 100}%` }}
             />
           </div>
         </div>
