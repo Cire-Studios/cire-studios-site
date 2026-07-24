@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/last-hit/rulebook",
-        destination: "/last-hit/Last-Hit-Rulebook-v1.5.pdf",
+        destination: "/last-hit/Last-Hit-Rulebook-v4.0.pdf",
       },
       {
         source: "/last-hit/prototype",
